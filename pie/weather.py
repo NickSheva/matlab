@@ -8,6 +8,8 @@ if filename.is_file() and filename.suffix == '.csv':
         reader = csv.reader(f)
         header = next(reader)
         print(header)
+        for i, value in enumerate(header):
+            print(i, value)
 
 else:
     print("No")

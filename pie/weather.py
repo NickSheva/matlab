@@ -2,7 +2,10 @@
 import csv
 from pathlib import Path
 
+
 filename = Path('weather/sitka_weather_07-2018_simple.csv')
+# reading CSV file
+
 if filename.is_file() and filename.suffix == '.csv':
     with open(filename, 'r', encoding='utf-8') as f:
         reader = csv.reader(f)
@@ -15,7 +18,6 @@ if filename.is_file() and filename.suffix == '.csv':
             highs.append(high)
             low = int(row[6])
             lows.append(low)
-
         print(highs)
         print(lows)
 

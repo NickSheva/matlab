@@ -11,5 +11,7 @@ fig, ax = plt.subplots()
 # создаем рисунок
 ax.pie(x=size, labels=None, colors=colors, startangle=-55, autopct='%.f%%',
        textprops=text_props)
+
+ax.legend(labels, loc='best')
 # отобржаем на экране
 plt.show()

@@ -20,7 +20,12 @@ with open(filename, 'r', encoding='utf-8') as f:
     # Нанесение данных на диаграмму.
     plt.style.use('seaborn-v0_8-paper')
     fig, ax = plt.subplots()
-    ax.plot(highs, c='r')
-    ax.plot(lows, c='b')
+    ax.plot(highs, c='r', alpha=.5)
+    ax.plot(lows, c='b', alpha=.5)
+    ax.set_title("Daily high temperatures, July 2018", fontsize=20, color='thistle')
+    ax.set_xlabel('', fontsize=16)
+    ax.set_ylabel("Temperature (F)", fontsize=16, c='rosybrown')
+    ax.tick_params(axis='both', which='major', labelsize=10)
+    ax.set_ylim(40,80)
     plt.show()
 

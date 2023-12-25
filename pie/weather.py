@@ -18,7 +18,7 @@ with open(filename, 'r', encoding='utf-8') as f:
     print(highs)
     print(lows)
     # Нанесение данных на диаграмму.
-    plt.style.use('seaborn-v0_8-paper')
+    plt.style.use('ggplot')
     fig, ax = plt.subplots()
     ax.plot(highs, c='r', alpha=.5)
     ax.plot(lows, c='b', alpha=.5)

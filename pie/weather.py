@@ -9,6 +9,15 @@ if filename.is_file() and filename.suffix == '.csv':
         header = next(reader)
         print(header)
         print('\n'.join(f"{i} {value}" for i, value in enumerate(header)))
+        highs, lows = [], []
+        for row in reader:
+            high = int(row[5])
+            highs.append(high)
+            low = int(row[6])
+            lows.append(low)
+
+        print(highs)
+        print(lows)
 
 else:
     print("No")

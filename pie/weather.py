@@ -3,7 +3,7 @@ import csv
 import matplotlib.pyplot as plt
 from datetime import datetime
 
-filename = 'weather/sitka_weather_07-2018_simple.csv'
+filename = 'weather/sitka_weather_2018_simple.csv'
 
 with (open(filename, 'r', encoding='utf-8') as f):
     reader = csv.reader(f)
@@ -26,11 +26,12 @@ with (open(filename, 'r', encoding='utf-8') as f):
     fig, ax = plt.subplots()
     ax.plot(dates, highs, c='r', alpha=.5)
     ax.plot(dates, lows, c='b', alpha=.5)
+    ax.fill_between(dates, highs, lows, color='blue', alpha=0.1)
     fig.autofmt_xdate(rotation=60)
-    ax.set_title("Daily high temperatures, July 2018", fontsize=20, color='thistle')
+    ax.set_title("Daily high temperatures 2018", fontsize=20, color='thistle')
     ax.set_xlabel('', fontsize=16)
     ax.set_ylabel("Temperature (F)", fontsize=16, c='rosybrown')
     ax.tick_params(axis='both', which='major', labelsize=10)
-    ax.set_ylim(40,80)
+    ax.set_ylim(20,80)
     plt.show()
 

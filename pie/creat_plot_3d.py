@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 fig = plt.figure()
 
 # Defining the exes as 3D
-ax = plt.axes(projection='3d')
+ax = plt.axes(1, 2, 1projection='3d')
 
 # Defining all three axes
 z = np.linspace(0, 1, 100)

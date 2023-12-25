@@ -8,8 +8,7 @@ if filename.is_file() and filename.suffix == '.csv':
         reader = csv.reader(f)
         header = next(reader)
         print(header)
-        for i, value in enumerate(header):
-            print(i, value)
+        print('\n'.join(f"{i} {value}" for i, value in enumerate(header)))
 
 else:
     print("No")

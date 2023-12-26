@@ -7,4 +7,6 @@ data = np.random.random((12, 12))
 plt.imshow(data, cmap='autumn', interpolation='nearest')
 # Установка заголовка
 plt.title("Heat Map 2D")
+# удаление осей x, y
+plt.axis("off")
 plt.show()

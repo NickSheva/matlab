@@ -3,10 +3,11 @@
 
 #  импортируем зависимости
 import matplotlib.pyplot as plt
+from matplotlib.lines import Line2D
 
 # Указываем данные для переменных
 sizes = [554.6, 822.6]
-labels = ['Чистый прирост\n стоимости', 'Дивидетды (с\n учетом налогов']
+labels = ['Чистый прирост\n стоимости', 'Дивиденды (с\n учетом налогов']
 colors = ['mediumseagreen', 'gold']
 # устанавливаем данные для пирога (край, ширина линии и стиль)
 wedgeprops = {'edgecolor': 'white', 'linewidth': 2, 'linestyle': '-'}
@@ -32,16 +33,19 @@ patches, texts, autotexts = ax.pie(sizes, colors=colors,
        rotatelabels=True, labeldistance=0.95,
        wedgeprops=wedgeprops,
        textprops=textprops)
+# Добавляем пользовательские данные отображение legend
+legend_elements = [Line2D([0], [0], marker='s', markersize=16, lw=0, color='gold'),
+                   Line2D([0], [0], marker='s', markersize=16, lw=0, color='mediumseagreen')]
+
 # устанавливаем даные для legend
-fig.legend(labels=labels, bbox_to_anchor=(1.0, 0.7), labelcolor='white',
-           prop={'weight': 'bold', 'size': 18},
-           labelspacing = 4, frameon=False)
+fig.legend(legend_elements, labels, bbox_to_anchor=(1.0, 0.7), labelcolor='white',
+           prop={'weight': 'bold', 'size': 18}, labelspacing = 4, frameon=False)
 # назначаем место для пирога
 plt.subplots_adjust(left=0.07, bottom=0.1, right=0.54)
 # меняем проценты на тексе из sizes
 sizes = list(map(lambda x: str(x).replace('.', ','), sizes))
 for i, a in enumerate(autotexts):
-       a.set_text(f"{sizes[i]}00₽")
+       a.set_text(f"{sizes[i]}00 ₽")
 
 # вывод на дисплей
 plt.show()

@@ -10,6 +10,8 @@ labels = ['Чистый прирост стоимости', 'Дивидетды 
 colors = ['mediumseagreen', 'gold']
 # устанавливаем данные для пирога (край, ширина линии и стиль)
 wedgeprops = {'edgecolor': 'white', 'linewidth': 2, 'linestyle': '-'}
+# устанавливаем данные для текста (цвет, рашмер и стиль шрифта)
+textprops = {'color': 'black', 'size': 16, 'weight': 'bold'}
 # установливаем рамку, на которой мы не можем рисовать
 # в одной записной книжке или скрипте может быть несколько фигур.
 # у каждого рисунка может быть несколько подсюжетов.
@@ -28,6 +30,7 @@ ax.pie(sizes, labels=labels, colors=colors,
        startangle=90,
        radius=0.9,
        rotatelabels=True, labeldistance=0.95,
-       wedgeprops=wedgeprops)
+       wedgeprops=wedgeprops,
+       textprops=textprops)
 # вывод на дисплей
 plt.show()

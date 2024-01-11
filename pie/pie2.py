@@ -35,9 +35,9 @@ patches, texts, autotexts = ax.pie(sizes, colors=colors,
        textprops=textprops)
 # Добавляем пользовательские данные отображение legend
 legend_elements = [Line2D([0], [0], marker='s', markersize=16, lw=0, color='gold',
-                          markeredgecolor='white'),
+                          markeredgecolor='white', markeredgewidth=3),
                    Line2D([0], [0], marker='s', markersize=16, lw=0, color='mediumseagreen',
-                          markeredgecolor='white')]
+                          markeredgecolor='white', markeredgewidth=3)]
 
 # устанавливаем даные для legend
 fig.legend(legend_elements, labels, bbox_to_anchor=(1.0, 0.7), labelcolor='white',

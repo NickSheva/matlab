@@ -39,7 +39,7 @@ fig.legend(labels=labels, bbox_to_anchor=(1.0, 0.7), labelcolor='white',
 plt.subplots_adjust(left=0.03, bottom=0.1, right=0.45)
 # меняем проценты на тексе из sizes
 for i, a in enumerate(autotexts):
-       a.set_text(sizes[i])
+       a.set_text(f"{sizes[i]}00₽")
 
 # вывод на дисплей
 plt.show()

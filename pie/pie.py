@@ -31,3 +31,4 @@ ax.legend(handles=legend_elements, bbox_to_anchor=(1.3, 1.16), ncol=3, frameon=F
 plt.tight_layout()
 # сохраниние графика
 plt.savefig('copy.png')
+plt.show()

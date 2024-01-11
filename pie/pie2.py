@@ -7,7 +7,7 @@ from matplotlib.lines import Line2D
 
 # Указываем данные для переменных
 sizes = [554.6, 822.6]
-labels = ['Чистый прирост\n стоимости', 'Дивиденды (с\n учетом налогов']
+labels = ['Чистый прирост\n стоимости', 'Дивиденды (с\n учетом налогов)']
 colors = ['mediumseagreen', 'gold']
 # устанавливаем данные для пирога (край, ширина линии и стиль)
 wedgeprops = {'edgecolor': 'white', 'linewidth': 2, 'linestyle': '-'}
@@ -29,19 +29,21 @@ ax = fig.add_subplot()
 patches, texts, autotexts = ax.pie(sizes, colors=colors,
        autopct='%.2f%%', pctdistance=.4,
        startangle=90,
-       radius=1.4,
+       radius=1.2,
        rotatelabels=True, labeldistance=0.95,
        wedgeprops=wedgeprops,
        textprops=textprops)
 # Добавляем пользовательские данные отображение legend
-legend_elements = [Line2D([0], [0], marker='s', markersize=16, lw=0, color='gold',
-                          markeredgecolor='white', markeredgewidth=3),
-                   Line2D([0], [0], marker='s', markersize=16, lw=0, color='mediumseagreen',
-                          markeredgecolor='white', markeredgewidth=3)]
-
+fig.add_artist(Line2D([0.62], [0.64], marker='s', markersize=16, lw=0, color='gold',
+                      markeredgecolor='white', markeredgewidth=3))
+fig.add_artist(Line2D([0.62], [0.4], marker='s', markersize=16, lw=0, color='mediumseagreen',
+                      markeredgecolor='white', markeredgewidth=3))
+# Adding text without box on the plot.
+ax.text(1.8, .48, 'Чистый прирост\n стоимости', color='w', size=18, weight='bold')
+ax.text(1.8, -.64, 'Дивиденды (с\n учетом налогов)', color='w', size=18, weight='bold')
 # устанавливаем даные для legend
-fig.legend(legend_elements, labels, bbox_to_anchor=(1.0, 0.7), labelcolor='white',
-           prop={'weight': 'bold', 'size': 18}, labelspacing = 4, frameon=False)
+# fig.legend(labels, bbox_to_anchor=(1.0, 0.7), labelcolor='white',
+#            prop={'weight': 'bold', 'size': 18}, labelspacing = 4, frameon=False)
 # назначаем место для пирога
 plt.subplots_adjust(left=0.07, bottom=0.1, right=0.54)
 # меняем проценты на тексе из sizes

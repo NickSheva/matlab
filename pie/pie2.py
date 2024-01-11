@@ -8,7 +8,8 @@ import matplotlib.pyplot as plt
 sizes = [554.6, 822.6]
 labels = ['Чистый прирост стоимости', 'Дивидетды (с учетом налогов']
 colors = ['mediumseagreen', 'gold']
-
+# устанавливаем данные для пирога (край, ширина линии и стиль)
+wedgeprops = {'edgecolor': 'white', 'linewidth': 2, 'linestyle': '-'}
 # установливаем рамку, на которой мы не можем рисовать
 # в одной записной книжке или скрипте может быть несколько фигур.
 # у каждого рисунка может быть несколько подсюжетов.
@@ -26,6 +27,7 @@ ax.pie(sizes, labels=labels, colors=colors,
        autopct='%.2f%%', pctdistance=.4,
        startangle=90,
        radius=0.9,
-       rotatelabels=True, labeldistance=0.95)
+       rotatelabels=True, labeldistance=0.95,
+       wedgeprops=wedgeprops)
 # вывод на дисплей
 plt.show()

@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 # Указываем данные для переменных
 sizes = [554.6, 822.6]
-labels = ['Чистый прирост стоимости', 'Дивидетды (с учетом налогов']
+labels = ['Чистый прирост\n стоимости', 'Дивидетды (с\n учетом налогов']
 colors = ['mediumseagreen', 'gold']
 # устанавливаем данные для пирога (край, ширина линии и стиль)
 wedgeprops = {'edgecolor': 'white', 'linewidth': 2, 'linestyle': '-'}
@@ -33,6 +33,7 @@ ax.pie(sizes, colors=colors,
        wedgeprops=wedgeprops,
        textprops=textprops)
 # устанавливаем даные для legend
-fig.legend(labels=labels)
+fig.legend(labels=labels, bbox_to_anchor=(1.0, 0.7), fontsize=16,
+           labelspacing = 4)
 # вывод на дисплей
 plt.show()

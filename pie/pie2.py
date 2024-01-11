@@ -25,7 +25,7 @@ ax = fig.add_subplot()
 # крутим пирог на 90 градусов с помощью startangle
 # устанавливаем radius, увеличивая или уменьшая пирог
 # вращаем labels с помощью  rotatelabels=True и дистанцию
-ax.pie(sizes, colors=colors,
+patches, texts, autotexts = ax.pie(sizes, colors=colors,
        autopct='%.2f%%', pctdistance=.4,
        startangle=90,
        radius=1.4,
@@ -37,5 +37,9 @@ fig.legend(labels=labels, bbox_to_anchor=(1.0, 0.7), labelcolor='white',
            fontsize=18, labelspacing = 4, frameon=False)
 # назначаем место для пирога
 plt.subplots_adjust(left=0.03, bottom=0.1, right=0.45)
+# меняем проценты на тексе из sizes
+for i, a in enumerate(autotexts):
+       a.set_text(sizes[i])
+
 # вывод на дисплей
 plt.show()

@@ -28,12 +28,14 @@ ax = fig.add_subplot()
 ax.pie(sizes, colors=colors,
        autopct='%.2f%%', pctdistance=.4,
        startangle=90,
-       radius=0.9,
+       radius=1.4,
        rotatelabels=True, labeldistance=0.95,
        wedgeprops=wedgeprops,
        textprops=textprops)
 # устанавливаем даные для legend
 fig.legend(labels=labels, bbox_to_anchor=(1.0, 0.7), labelcolor='white',
            fontsize=18, labelspacing = 4, frameon=False)
+# назначаем место для пирога
+plt.subplots_adjust(left=0.03, bottom=0.1, right=0.45)
 # вывод на дисплей
 plt.show()

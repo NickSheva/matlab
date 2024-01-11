@@ -17,7 +17,7 @@ textprops = {'color': 'black', 'size': 16, 'weight': 'bold'}
 # у каждого рисунка может быть несколько подсюжетов.
 # здесь подсюжет является синонимом осей.
 # но мы можем задавать размер и цвет для рамки
-fig = plt.figure(figsize=(8, 7))
+fig = plt.figure(facecolor='black', figsize=(8, 7))
 # ax, сокращенно от оси, - это холст, на котором вы рисуете.
 ax = fig.add_subplot()
 # рисуем пирог с переменными(size, labels, colors)
@@ -33,7 +33,7 @@ ax.pie(sizes, colors=colors,
        wedgeprops=wedgeprops,
        textprops=textprops)
 # устанавливаем даные для legend
-fig.legend(labels=labels, bbox_to_anchor=(1.0, 0.7), fontsize=16,
-           labelspacing = 4)
+fig.legend(labels=labels, bbox_to_anchor=(1.0, 0.7), labelcolor='white',
+           fontsize=18, labelspacing = 4, frameon=False)
 # вывод на дисплей
 plt.show()

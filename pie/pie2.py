@@ -25,12 +25,14 @@ ax = fig.add_subplot()
 # крутим пирог на 90 градусов с помощью startangle
 # устанавливаем radius, увеличивая или уменьшая пирог
 # вращаем labels с помощью  rotatelabels=True и дистанцию
-ax.pie(sizes, labels=labels, colors=colors,
+ax.pie(sizes, colors=colors,
        autopct='%.2f%%', pctdistance=.4,
        startangle=90,
        radius=0.9,
        rotatelabels=True, labeldistance=0.95,
        wedgeprops=wedgeprops,
        textprops=textprops)
+# устанавливаем даные для legend
+fig.legend(labels=labels)
 # вывод на дисплей
 plt.show()

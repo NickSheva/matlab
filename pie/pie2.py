@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 # Указываем данные для переменных
 sizes = [554.6, 822.6]
-label = ['Чистый прирост стоимости', 'Дивидетды (с учетом налогов']
+labels = ['Чистый прирост стоимости', 'Дивидетды (с учетом налогов']
 colors = ['mediumseagreen', 'gold']
 
 # установливаем рамку, на которой мы не можем рисовать
@@ -14,9 +14,18 @@ colors = ['mediumseagreen', 'gold']
 # у каждого рисунка может быть несколько подсюжетов.
 # здесь подсюжет является синонимом осей.
 # но мы можем задавать размер и цвет для рамки
-fig = plt.figure(facecolor='black', figsize=(8, 7))
+fig = plt.figure(figsize=(8, 7))
 # ax, сокращенно от оси, - это холст, на котором вы рисуете.
 ax = fig.add_subplot()
-
+# рисуем пирог с переменными(size, labels, colors)
+# устанавливаем autopct в процентах и расположение в пироге с помощью pctdistance
+# крутим пирог на 90 градусов с помощью startangle
+# устанавливаем radius, увеличивая или уменьшая пирог
+# вращаем labels с помощью  rotatelabels=True и дистанцию
+ax.pie(sizes, labels=labels, colors=colors,
+       autopct='%.2f%%', pctdistance=.4,
+       startangle=90,
+       radius=0.9,
+       rotatelabels=True, labeldistance=0.95)
 # вывод на дисплей
 plt.show()

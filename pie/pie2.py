@@ -34,9 +34,10 @@ patches, texts, autotexts = ax.pie(sizes, colors=colors,
        textprops=textprops)
 # устанавливаем даные для legend
 fig.legend(labels=labels, bbox_to_anchor=(1.0, 0.7), labelcolor='white',
-           fontsize=18, labelspacing = 4, frameon=False)
+           prop={'weight': 'bold', 'size': 18},
+           labelspacing = 4, frameon=False)
 # назначаем место для пирога
-plt.subplots_adjust(left=0.03, bottom=0.1, right=0.45)
+plt.subplots_adjust(left=0.07, bottom=0.1, right=0.54)
 # меняем проценты на тексе из sizes
 sizes = list(map(lambda x: str(x).replace('.', ','), sizes))
 for i, a in enumerate(autotexts):
